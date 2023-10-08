@@ -1,0 +1,19 @@
+count=1
+while [ $count -lt 5 ]
+do
+echo "Enter roll number,name and marks $count:"
+read rlno
+read nm
+read mks
+if [ $mks -lt 35 ]
+then
+echo "$rlno~$nm~$mks">>fail
+else
+echo "$rlno~$nm~$mks">>pass
+fi
+count=$[ $count+1 ]
+done
+echo "Students who have passed:"
+cat pass
+echo "Students who have failed :"
+cat fail;
